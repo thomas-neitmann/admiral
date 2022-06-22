@@ -25,6 +25,8 @@ admiral extension packages (#1079)
     - `AVAL` is derived instead of `AVALN` and
     - all variables from the source dataset are kept.
 
+- `format_eoxxstt_default()` - Updated the default value of EOSSTT for screen failure patients  (#885)
+
 # admiral 0.7.0
 
 ## New Features
