@@ -1,29 +1,33 @@
-# Function within Function
-func <- function(val, val_fmt){
-  func_in_func = function(input){
-    output = val
+# Function (get_map)
+get_map <- function(val, val_fmt){
+  get_map_temp = function(input){
+    output <- list()
+    for(i in 1:length(input)){
+      for(j in 1:length(val)){
+        if(!(input[[i]] %in% val)){
+          output[[i]] <- ""
+        }
+        else if(input[[i]] == val[[j]]){
+          output[[i]] <- val_fmt[[j]]
+        }
+      }
+    }
     return(output)
   }
-  return(func_in_func)
+  return(get_map_temp)
 }
 
-func(val=c("USA", "CAN", "ENG"),
-        val_fmt=c("NA", "NA", "EUR"))
+# Example - Yes / No
+yn_order <- get_map(val=c("Y", "N"),
+                      val_fmt=c("1", "0"))
+yn_order
+yn_order(c("Y", "N", "Y", "MAYBE"))
 
+# Example - Region
+region_def <- get_map(val=c("USA", "ENG", "CAN", "JAP", "FRA"),
+                      val_fmt=c("North America", "Europe", "North America", "Asia", "Europe"))
+region_def
+region_def(c("CAN", "FRA", "JAP", "USA", "USA", "ENG", "ABC"))
 
-# Function with unlimited arguments
-test <- function(...){
-  sum(...)
-}
-
-test(1,2,3)
-
-# get_map
-get_map <- function(...){
-  quote(...)
-  list(...)
-}
-
-get_map("Y" := 1, "N" := 0)
 
 
