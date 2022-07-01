@@ -8,8 +8,17 @@
 #'
 #' @author Nathan Rees, Maya Dhaliwal, Tamara Senior
 #'
+<<<<<<< HEAD
 #' @return A character vector
 #'
+=======
+#' @details Usually this computation function can not be used with `%>%`.
+#'
+#' @return A character vector
+#'
+#' @keywords computation timing
+#'
+>>>>>>> f3aeb6372edf2fb9b717617f17c92832ea4a2d7e
 #' @export
 #'
 #' @examples
@@ -25,7 +34,10 @@
 #'                       val_fmt=c("North America", "Europe", "North America", "Asia", "Europe"))
 #'
 #' region_def(c("CAN", "FRA", "JAP", "USA", "USA", "ENG", "ABC"))
+<<<<<<< HEAD
 #'
+=======
+>>>>>>> f3aeb6372edf2fb9b717617f17c92832ea4a2d7e
 get_map <- function(val, val_fmt){
   get_map_temp = function(input){
     output <- list()
